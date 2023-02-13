@@ -1,7 +1,9 @@
-import React from "react";
+// import React from "react";
 
-const NewPlace = () => {
-  return <h2>NewPlace</h2>
-}
+// const NewPlace = () => {
+//   return <form className="place-form">
+//     <Input type="text" label="Title" />
+//   </form>
+// }
 
-export default NewPlace
+// export default NewPlace

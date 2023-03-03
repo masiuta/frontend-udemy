@@ -6,7 +6,7 @@ import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 
-const UserPlaces = async () => {
+const UserPlaces = () => {
   const [loadedPlaces, setLoadedPlaces] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
@@ -18,7 +18,6 @@ const UserPlaces = async () => {
         const responseData = await sendRequest(
           `http://localhost:5001/api/places/user/${userId}`
         );
-        console.log(responseData);
         setLoadedPlaces(responseData.places);
       } catch (err) {}
     };
@@ -33,7 +32,7 @@ const UserPlaces = async () => {
           <LoadingSpinner />
         </div>
       )}
-     {!isLoading && loadedPlaces && <PlaceList items={loadedPlaces} />}
+      {!isLoading && loadedPlaces && <PlaceList items={loadedPlaces} />}
     </React.Fragment>
   );
 };

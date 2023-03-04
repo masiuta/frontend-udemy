@@ -17,6 +17,7 @@ import { AuthContext } from '../../shared/context/auth-context';
 const NewPlace = () => {
   const auth = useContext(AuthContext);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const history = useHistory();
   const [formState, inputHandler] = useForm(
     {
       title: {
@@ -34,8 +35,6 @@ const NewPlace = () => {
     },
     false
   );
-
-  const history = useHistory();
 
   const placeSubmitHandler = async (event) => {
     event.preventDefault();

@@ -10,7 +10,7 @@ export const useAuth = () => {
     setToken(token);
     setUserId(uid);
     const tokenExpirationDate =
-      expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+      expirationDate || new Date(new Date().getTime() + process.env.REACT_APP_AUTH_TOKEN_EXPIRES);
     setTokenExpirationDate(tokenExpirationDate);
     localStorage.setItem(
       'userData',
